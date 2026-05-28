@@ -24,7 +24,6 @@ document.querySelectorAll('[data-anim]').forEach((el, i) => {
   animObs.observe(el);
 });
 
-// Stagger grid cards
 function staggerObserve(selector) {
   document.querySelectorAll(selector).forEach((el, i) => {
     el.style.transitionDelay = (i * 90) + 'ms';
@@ -34,48 +33,83 @@ function staggerObserve(selector) {
 staggerObserve('.fcard');
 staggerObserve('.wcard');
 staggerObserve('.tcard');
-staggerObserve('.step');
 
 /* ================================================
-   DEMO CAROUSEL
+   DEMO CAROUSEL — manual navigation only
    ================================================ */
 const TOTAL_STEPS = 7;
 let currentStep = 0;
+let transitioning = false;
 
-// Step → role mapping for the flow indicator
 const stepRoles = ['client','client','client','admin','admin','courier','finish'];
 
-const slides = document.querySelectorAll('.dc-slide');
-const dots   = document.querySelectorAll('.dd');
+const slides    = document.querySelectorAll('.dc-slide');
+const dots      = document.querySelectorAll('.dd');
 const flowNodes = document.querySelectorAll('.df-node');
 
-function showStep(idx) {
+function showStep(idx, dir) {
+  if (transitioning) return;
+
   idx = ((idx % TOTAL_STEPS) + TOTAL_STEPS) % TOTAL_STEPS;
+  if (idx === currentStep) return;
+
+  /* Determine slide direction if not provided */
+  if (dir === undefined) {
+    const diff = idx - currentStep;
+    const wrap = Math.abs(diff) > TOTAL_STEPS / 2;
+    dir = wrap ? (diff < 0 ? 1 : -1) : (diff > 0 ? 1 : -1);
+  }
+
+  transitioning = true;
+  const prev = currentStep;
   currentStep = idx;
 
-  slides.forEach((s, i) => {
-    s.classList.toggle('active', i === idx);
-  });
+  const prevSlide = slides[prev];
+  const nextSlide = slides[idx];
 
-  dots.forEach((d, i) => {
-    d.classList.toggle('active', i === idx);
-  });
+  /* ── Exit outgoing slide ── */
+  prevSlide.style.transition = 'opacity .38s ease, transform .38s ease';
+  prevSlide.style.opacity    = '0';
+  prevSlide.style.transform  = `translateX(${dir > 0 ? -48 : 48}px)`;
+  prevSlide.classList.remove('active');
 
+  /* ── Position incoming slide off-screen instantly ── */
+  nextSlide.style.transition = 'none';
+  nextSlide.style.opacity    = '0';
+  nextSlide.style.transform  = `translateX(${dir > 0 ? 48 : -48}px)`;
+
+  /* Force reflow so the browser registers the starting position */
+  nextSlide.getBoundingClientRect();
+
+  /* ── Animate incoming slide to centre ── */
+  nextSlide.style.transition = 'opacity .38s ease, transform .38s ease';
+  nextSlide.style.opacity    = '';
+  nextSlide.style.transform  = '';
+  nextSlide.classList.add('active');
+
+  /* ── Update dots & role indicator ── */
+  dots.forEach((d, i) => d.classList.toggle('active', i === idx));
   const role = stepRoles[idx];
-  flowNodes.forEach(n => {
-    n.classList.toggle('active', n.dataset.role === role);
-  });
+  flowNodes.forEach(n => n.classList.toggle('active', n.dataset.role === role));
+
+  /* ── Cleanup after transition ── */
+  setTimeout(() => {
+    prevSlide.style.transition = '';
+    prevSlide.style.opacity    = '';
+    prevSlide.style.transform  = '';
+    transitioning = false;
+  }, 420);
 }
 
-window.demoNav = function(dir) {
-  showStep(currentStep + dir);
+window.demoNav = function(d) {
+  showStep(currentStep + d, d > 0 ? 1 : -1);
 };
 
 window.demoJump = function(idx) {
   showStep(idx);
 };
 
-// Touch / swipe support
+/* Touch / swipe support */
 let touchX = null;
 const slidesCont = document.getElementById('demoSlides');
 if (slidesCont) {
@@ -85,26 +119,27 @@ if (slidesCont) {
   slidesCont.addEventListener('touchend', e => {
     if (touchX === null) return;
     const dx = e.changedTouches[0].clientX - touchX;
-    if (Math.abs(dx) > 40) {
-      showStep(currentStep + (dx < 0 ? 1 : -1));
+    if (Math.abs(dx) > 44) {
+      showStep(currentStep + (dx < 0 ? 1 : -1), dx < 0 ? 1 : -1);
     }
     touchX = null;
   }, { passive: true });
 }
 
-// Keyboard arrow support
+/* Keyboard arrow support */
 document.addEventListener('keydown', e => {
-  if (e.key === 'ArrowRight') showStep(currentStep + 1);
-  if (e.key === 'ArrowLeft')  showStep(currentStep - 1);
+  if (e.key === 'ArrowRight') showStep(currentStep + 1, 1);
+  if (e.key === 'ArrowLeft')  showStep(currentStep - 1, -1);
 });
 
-// Initialize
-showStep(0);
+/* Initialize — slide 0 is already active in HTML; just sync dots & flow */
+dots.forEach((d, i) => d.classList.toggle('active', i === 0));
+flowNodes.forEach(n => n.classList.toggle('active', n.dataset.role === stepRoles[0]));
 
 /* ================================================
    TARIFF TIER CHOOSER
    ================================================ */
-const tierBtns   = document.querySelectorAll('.tier-btn');
+const tierBtns    = document.querySelectorAll('.tier-btn');
 const tierPriceEl = document.getElementById('tierPrice');
 const tierRangeEl = document.getElementById('tierRange');
 
