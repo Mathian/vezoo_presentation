@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Vezoo — Сервис доставки для вашего заведения</title>
+  <meta name="description" content="Vezoo — современная платформа управления доставкой для кафе и ресторанов.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <span class="logo-v">V</span><span class="logo-rest">ezoo</span>
+        <span class="logo-pulse"></span>
+      </div>
+      <div class="nav-links">
+        <a href="#features">Возможности</a>
+        <a href="#demo">Как работает</a>
+        <a href="#tariffs">Тарифы</a>
+        <a href="#contacts">Контакты</a>
+      </div>
+      <a href="#contacts" class="nav-btn">Подключиться</a>
+      <button class="nav-burger" id="navBurger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+      <a href="#features" class="nm-link">Возможности</a>
+      <a href="#demo" class="nm-link">Как работает</a>
+      <a href="#tariffs" class="nm-link">Тарифы</a>
+      <a href="#contacts" class="nm-link">Контакты</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="blob b1"></div>
+      <div class="blob b2"></div>
+      <div class="blob b3"></div>
+      <div class="hero-grid"></div>
+    </div>
+    <div class="hero-wrap">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <span class="hb-dot"></span>
+          Коммерческое предложение
+        </div>
+        <h1 class="hero-title">
+          Упростите доставку<br>
+          <span class="g-text">в вашем заведении</span>
+        </h1>
+        <p class="hero-sub">
+          Vezoo — всё для приёма онлайн-заказов, работы с курьерами
+          и управления доставкой. Быстрое подключение, прозрачная аналитика.
+        </p>
+        <div class="hero-actions">
+          <a href="#demo" class="btn-fill">Посмотреть демо</a>
+          <a href="#tariffs" class="btn-outline">Узнать тарифы</a>
+        </div>
+        <div class="hero-chips">
+          <span class="chip">⚡ Быстрое подключение</span>
+          <span class="chip">📱 Telegram MiniApp</span>
+          <span class="chip">🏪 Кафе и рестораны</span>
+        </div>
+      </div>
+      <div class="hero-phone-wrap">
+        <div class="hphone">
+          <div class="hphone-notch"></div>
+          <div class="hphone-screen">
+            <div class="vzs">
+              <div class="vzs-hdr">
+                <span class="vzs-hdr-logo">🛵 Везу</span>
+                <span class="vzs-hdr-icon">🔍</span>
+              </div>
+              <div class="vzs-section-title">Заведения рядом</div>
+              <div class="vzs-scroll-area">
+                <div class="vzs-venue" id="hv1">
+                  <div class="vzs-venue-img">🍽️</div>
+                  <div class="vzs-venue-body">
+                    <div class="vzs-venue-name">Кафе «Уют»</div>
+                    <div class="vzs-venue-meta">
+                      <span class="vzs-venue-stats">⭐ 4.8 · ~35 мин</span>
+                      <span class="vzs-venue-open">● Открыто</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="vzs-venue" id="hv2">
+                  <div class="vzs-venue-img" style="background:#101014">🍔</div>
+                  <div class="vzs-venue-body">
+                    <div class="vzs-venue-name">Бургерная «#1»</div>
+                    <div class="vzs-venue-meta">
+                      <span class="vzs-venue-stats">⭐ 4.6 · ~20 мин</span>
+                      <span class="vzs-venue-open">● Открыто</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="vzs-venue">
+                  <div class="vzs-venue-img" style="background:#0e0e12">🍕</div>
+                  <div class="vzs-venue-body">
+                    <div class="vzs-venue-name">Пиццерия «Форно»</div>
+                    <div class="vzs-venue-meta">
+                      <span class="vzs-venue-stats">⭐ 4.7 · ~40 мин</span>
+                      <span class="vzs-venue-open">● Открыто</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="vzs-bnav">
+                <div class="vzs-ni on">
+                  <div class="vzs-ni-bar"></div>
+                  <span class="vzs-ni-ico">🏠</span>
+                  <span>Главная</span>
+                </div>
+                <div class="vzs-ni">
+                  <span class="vzs-ni-ico">📦</span>
+                  <span>Заказы</span>
+                </div>
+                <div class="vzs-ni">
+                  <span class="vzs-ni-ico">👤</span>
+                  <span>Профиль</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hphone-home"></div>
+        </div>
+        <div class="hphone-glow"></div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Прокрутите вниз</span>
+      <div class="scroll-chevron"></div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <div class="cnt">
+      <div class="sec-head" data-anim>
+        <span class="sec-tag">Возможности</span>
+        <h2>Что получает ваше заведение</h2>
+        <p>Всё необходимое для запуска доставки — в одной платформе</p>
+      </div>
+      <div class="feat-grid">
+        <div class="fcard" data-anim>
+          <div class="fcard-icon">📲</div>
+          <h3>Приём заказов онлайн</h3>
+          <p>Клиенты оформляют заказы через Telegram-приложение, вы получаете их моментально.</p>
+          <ul class="flist">
+            <li>Удобное онлайн-меню</li>
+            <li>Мгновенные уведомления</li>
+            <li>Полная история заказов</li>
+          </ul>
+        </div>
+        <div class="fcard" data-anim>
+          <div class="fcard-icon">🚴</div>
+          <h3>Работа с курьерами</h3>
+          <p>Гибкая система: свои курьеры или общий пул Vezoo для быстрого поиска.</p>
+          <ul class="flist">
+            <li>Назначение своего курьера</li>
+            <li>Общий пул курьеров</li>
+            <li>Быстрый поиск свободного</li>
+          </ul>
+        </div>
+        <div class="fcard" data-anim>
+          <div class="fcard-icon">📊</div>
+          <h3>Удобное управление</h3>
+          <p>Полная панель для отслеживания заказов, статусов и истории доставок.</p>
+          <ul class="flist">
+            <li>Управление меню</li>
+            <li>Учёт всех заказов</li>
+            <li>Контроль статусов</li>
+          </ul>
+        </div>
+        <div class="fcard fcard-accent" data-anim>
+          <div class="fcard-icon">⚙️</div>
+          <h3>Гибкая система</h3>
+          <p>Подходит как для небольшого кафе, так и для сети заведений.</p>
+          <ul class="flist">
+            <li>Доставка и самовывоз</li>
+            <li>Для любого масштаба</li>
+            <li>Техподдержка включена</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEMO -->
+  <section class="demo" id="demo">
+    <div class="cnt">
+      <div class="sec-head" data-anim>
+        <span class="sec-tag">Как работает</span>
+        <h2>От заказа до «Приятного аппетита!»</h2>
+        <p>Полный цикл доставки — шаг за шагом</p>
+      </div>
+
+      <!-- Role Flow Indicator -->
+      <div class="demo-flow" data-anim>
+        <span class="df-node active" data-role="client">👤 Клиент</span>
+        <span class="df-arrow">→</span>
+        <span class="df-node" data-role="admin">👨‍💼 Администратор</span>
+        <span class="df-arrow">→</span>
+        <span class="df-node" data-role="courier">🚴 Курьер</span>
+        <span class="df-arrow">→</span>
+        <span class="df-node" data-role="finish">🎉 Доставлено</span>
+      </div>
+
+      <!-- Carousel Wrapper -->
+      <div class="demo-cw" data-anim>
+        <button class="dc-arrow dc-prev" id="dcPrev" onclick="demoNav(-1)">‹</button>
+        <button class="dc-arrow dc-next" id="dcNext" onclick="demoNav(1)">›</button>
+
+        <div class="demo-slides" id="demoSlides">
+
+          <!-- ═══ SLIDE 1: Venue Selection ═══ -->
+          <div class="dc-slide active" data-step="0" data-role="client">
+            <div class="dc-phone-col">
+              <div class="dc-phone">
+                <div class="dc-notch"></div>
+                <div class="dc-screen">
+                  <div class="vzs">
+                    <div class="vzs-hdr">
+                      <span class="vzs-hdr-logo">🛵 Везу</span>
+                      <span class="vzs-hdr-icon">🔍</span>
+                    </div>
+                    <div class="vzs-section-title">Заведения рядом</div>
+                    <div class="vzs-scroll-area">
+                      <div class="vzs-venue">
+                        <div class="vzs-venue-img">🍽️</div>
+                        <div class="vzs-venue-body">
+                          <div class="vzs-venue-name">Кафе «Уют»</div>
+                          <div class="vzs-venue-meta">
+                            <span class="vzs-venue-stats">⭐ 4.8 · ~35 мин</span>
+                            <span class="vzs-venue-open">● Открыто</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="vzs-venue">
+                        <div class="vzs-venue-img" style="background:#0e0e12">🍔</div>
+                        <div class="vzs-venue-body">
+                          <div class="vzs-venue-name">Бургерная «#1»</div>
+                          <div class="vzs-venue-meta">
+                            <span class="vzs-venue-stats">⭐ 4.6 · ~20 мин</span>
+                            <span class="vzs-venue-open">● Открыто</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="vzs-venue">
+                        <div class="vzs-venue-img" style="background:#0d0f12">🍕</div>
+                        <div class="vzs-venue-body">
+                          <div class="vzs-venue-name">Пиццерия «Форно»</div>
+                          <div class="vzs-venue-meta">
+                            <span class="vzs-venue-stats">⭐ 4.7 · ~40 мин</span>
+                            <span class="vzs-venue-open">● Открыто</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="vzs-bnav">
+                      <div class="vzs-ni on">
+                        <div class="vzs-ni-bar"></div>
+                        <span class="vzs-ni-ico">🏠</span>
+                        <span>Главная</span>
+                      </div>
+                      <div class="vzs-ni">
+                        <span class="vzs-ni-ico">📦</span>
+                        <span>Заказы</span>
+                      </div>
+                      <div class="vzs-ni">
+                        <span class="vzs-ni-ico">👤</span>
+                        <span>Профиль</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="dc-home"></div>
+              </div>
+            </div>
+            <div class="dc-info-col">
+              <div class="dc-role-tag client-tag">👤 Клиент</div>
+              <div class="dc-step-lbl">Шаг 1 из 7</div>
+              <h3>Выбирает заведение</h3>
+              <p>Клиент открывает Vezoo и видит список заведений рядом с рейтингами, временем доставки и статусом работы.</p>
+              <div class="dc-highlights">
+                <div class="dc-hl">📍 Заведения рядом с клиентом</div>
+                <div class="dc-hl">⭐ Рейтинг и отзывы</div>
+                <div class="dc-hl">⏱️ Примерное время доставки</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ═══ SLIDE 2: Menu ═══ -->
+          <div class="dc-slide" data-step="1" data-role="client">
+            <div class="dc-phone-col">
+              <div class="dc-phone">
+                <div class="dc-notch"></div>
+                <div class="dc-screen">
+                  <div class="vzs">
+                    <div class="vzs-hdr">
+                      <div class="vzs-back">←</div>
+                      <span class="vzs-hdr-title">Кафе «Уют»</span>
+                      <span class="vzs-hdr-cart">🛒 <span class="vzs-cart-cnt">1</span></span>
+                    </div>
+                    <div class="vzs-cats">
+                      <span class="vzs-cat on">🍕 Пицца</span>
+                      <span class="vzs-cat">🍔 Бургеры</span>
+                      <span class="vzs-cat">🥗 Салаты</span>
+                    </div>
+                    <div class="vzs-mgrid">
+                      <div class="vzs-mcard">
+                        <div class="vzs-mcard-img">🍕</div>
+                        <div class="vzs-mcard-body">
+                          <div class="vzs-mcard-name">Маргарита</div>
+                          <div class="vzs-mcard-row">
+                            <span class="vzs-mcard-price">490 ₸</span>
+                            <div class="vzs-mcard-qty">
+                              <div class="vzs-mcard-qbtn">−</div>
+                              <span class="vzs-mcard-qnum">1</span>
+                              <div class="vzs-mcard-qbtn add">+</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="vzs-mcard">
+                        <div class="vzs-mcard-img">🍕</div>
+                        <div class="vzs-mcard-body">
+                          <div class="vzs-mcard-name">Пепперони</div>
+                          <div class="vzs-mcard-row">
+                            <span class="vzs-mcard-price">590 ₸</span>
+                            <div class="vzs-mcard-add">+</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="vzs-mcard">
+                        <div class="vzs-mcard-img">🍕</div>
+                        <div class="vzs-mcard-body">
+                          <div class="vzs-mcard-name">Четыре сыра</div>
+                          <div class="vzs-mcard-row">
+                            <span class="vzs-mcard-price">640 ₸</span>
+                            <div class="vzs-mcard-add">+</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="vzs-mcard">
+                        <div class="vzs-mcard-img">🍕</div>
+                        <div class="vzs-mcard-body">
+                          <div class="vzs-mcard-name">Гавайская</div>
+                          <div class="vzs-mcard-row">
+                            <span class="vzs-mcard-price">520 ₸</span>
+                            <div class="vzs-mcard-add">+</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="vzs-fab">
+                      <span>🛒 1 товар</span>
+                      <span>490 ₸ →</span>
+                    </div>
+                    <div class="vzs-bnav">
+                      <div class="vzs-ni on">
+                        <div class="vzs-ni-bar"></div>
+                        <span class="vzs-ni-ico">🏠</span>
+                        <span>Главная</span>
+                      </div>
+                      <div class="vzs-ni">
+                        <span class="vzs-ni-ico">📦</span>
+                        <span>Заказы</span>
+                      </div>
+                      <div class="vzs-ni">
+                        <span class="vzs-ni-ico">👤</span>
+                        <span>Профиль</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="dc-home"></div>
+              </div>
+            </div>
+            <div class="dc-info-col">
+              <div class="dc-role-tag client-tag">👤 Клиент</div>
+              <div class="dc-step-lbl">Шаг 2 из 7</div>
+              <h3>Выбирает блюда</h3>
+              <p>Видит меню с фотографиями и ценами, разбитое по категориям. Добавляет блюда в корзину одним касанием.</p>
+              <div class="dc-highlights">
+                <div class="dc-hl">🍽️ Фото и описание каждого блюда</div>
+                <div class="dc-hl">📂 Категории для удобства</div>
+                <div class="dc-hl">🛒 Корзина обновляется мгновенно</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ═══ SLIDE 3: Cart / Order ═══ -->
+          <div class="dc-slide" data-step="2" data-role="client">
+            <div class="dc-phone-col">
+              <div class="dc-phone">
+                <div class="dc-notch"></div>
+                <div class="dc-screen">
+                  <div class="vzs">
+                    <div class="vzs-hdr">
+                      <div class="vzs-back">←</div>
+                      <span class="vzs-hdr-title">Корзина</span>
+                      <span></span>
+                    </div>
+                    <div class="vzs-scroll-area" style="padding:0 11px">
+                      <div class="vzs-ci" style="padding:8px 0">
+                        <span>🍕 Маргарита × 1</span>
+                        <span class="vzs-ci-price">490 ₸</span>
+                      </div>
+                      <div class="vzs-ci" style="padding:8px 0">
+                        <span>🍔 Бургер Делюкс × 1</span>
+                        <span class="vzs-ci-price">750 ₸</span>
+                      </div>
+                      <div class="vzs-sep"></div>
+                      <div class="vzs-label" style="margin-top:8px">Адрес доставки</div>
+                      <div class="vzs-addr">📍 ул. Ленина, 15, кв. 42</div>
+                      <div class="vzs-sep" style="margin:8px 0"></div>
+                      <div class="vzs-total-row" style="margin-bottom:10px">
+                        <span>Итого</span>
+                        <span class="vzs-total">1 240 ₸</span>
+                      </div>
+                    </div>
+                    <div style="padding:0 11px 8px;flex-shrink:0">
+                      <div class="vzs-btn-primary">🔥 Оформить заказ</div>
+                      <div class="vzs-toast show" id="s3toast">
+                        <span>✅</span>
+                        <span>Заказ #1234 принят!</span>
+                      </div>
+                    </div>
+                    <div class="vzs-bnav">
+                      <div class="vzs-ni">
+                        <span class="vzs-ni-ico">🏠</span>
+                        <span>Главная</span>
+                      </div>
+                      <div class="vzs-ni on">
+                        <div class="vzs-ni-bar"></div>
+                        <span class="vzs-ni-ico">📦</span>
+                        <span>Заказы</span>
+                      </div>
+                      <div class="vzs-ni">
+                        <span class="vzs-ni-ico">👤</span>
+                        <span>Профиль</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="dc-home"></div>
+              </div>
+            </div>
+            <div class="dc-info-col">
+              <div class="dc-role-tag client-tag">👤 Клиент</div>
+              <div class="dc-step-lbl">Шаг 3 из 7</div>
+              <h3>Оформляет заказ</h3>
+              <p>Проверяет корзину, указывает адрес доставки и подтверждает заказ. Получает мгновенное подтверждение с номером.</p>
+              <div class="dc-highlights">
+                <div class="dc-hl">📍 Указывает адрес доставки</div>
+                <div class="dc-hl">💳 Выбирает способ оплаты</div>
+                <div class="dc-hl">✅ Мгновенное подтверждение</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ═══ SLIDE 4: Admin — New Order ═══ -->
+          <div class="dc-slide" data-step="3" data-role="admin">
+            <div class="dc-phone-col">
+              <div class="dc-phone">
+                <div class="dc-notch"></div>
+                <div class="dc-screen">
+                  <div class="vzs">
+                    <div class="vzs-hdr">
+                      <span class="vzs-hdr-title">📦 Заказы</span>
+                      <div class="vzs-badge vzs-badge-new" style="gap:4px">
+                        <span class="vzs-new-dot"></span> 1 новый
+                      </div>
+                    </div>
+                    <div class="vzs-scroll-area" style="padding:8px 11px">
+                      <div class="vzs-order-card">
+                        <div class="vzs-order-hdr">
+                          <div>
+                            <span class="vzs-order-id">#1234</span>
+                            <span style="font-size:9px;color:#4a4a62;margin-left:6px">только что</span>
+                          </div>
+                          <span class="vzs-badge vzs-badge-new">НОВЫЙ</span>
+                        </div>
+                        <div class="vzs-order-body">
+                          <div class="vzs-order-items">🍕 Маргарита · 🍔 Бургер Делюкс</div>
+                          <div class="vzs-order-addr">📍 ул. Ленина, 15, кв. 42</div>
+                          <div class="vzs-order-sum" style="margin-top:6px">1 240 ₸</div>
+                          <div class="vzs-order-btns">
+                            <div class="vzs-btn-acc">✓ Принять</div>
+                            <div class="vzs-btn-sec">Отменить</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="vzs-bnav" style="height:50px">
+                      <div class="vzs-ni on">
+                        <div class="vzs-ni-bar"></div>
+                        <span class="vzs-ni-ico">📦</span>
+                        <span>Заказы</span>
+                      </div>
+                      <div class="vzs-ni">
+                        <span class="vzs-ni-ico">🍽️</span>
+                        <span>Меню</span>
+                      </div>
+                      <div class="vzs-ni">
+                        <span class="vzs-ni-ico">📊</span>
+                        <span>Стат.</span>
+                      </div>
+                      <div class="vzs-ni">
+                        <span class="vzs-ni-ico">⚙️</span>
+                        <span>Настр.</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="dc-home"></div>
+              </div>
+            </div>
+            <div class="dc-info-col">
+              <div class="dc-role-tag admin-tag">👨‍💼 Администратор</div>
+              <div class="dc-step-lbl">Шаг 4 из 7</div>
+              <h3>Видит новый заказ</h3>
+              <p>Как только клиент оформляет заказ — администратор мгновенно получает уведомление с полными деталями.</p>
+              <div class="dc-highlights">
+                <div class="dc-hl">🔔 Мгновенное уведомление</div>
+                <div class="dc-hl">📋 Состав, адрес и контакт клиента</div>
+                <div class="dc-hl">⚡ Принять или отменить одним нажатием</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ═══ SLIDE 5: Admin — Search Courier ═══ -->
+          <div class="dc-slide" data-step="4" data-role="admin">
+            <div class="dc-phone-col">
+              <div class="dc-phone">
+                <div class="dc-notch"></div>
+                <div class="dc-screen">
+                  <div class="vzs">
+                    <div class="vzs-hdr">
+                      <div class="vzs-back">←</div>
+                      <span class="vzs-hdr-title">Заказ #1234</span>
+                      <span class="vzs-badge vzs-badge-ok" style="font-size:9px;padding:2px 7px">✅ Принят</span>
+                    </div>
+                    <div class="vzs-scroll-area" style="padding:8px 11px">
+                      <div class="vzs-order-card" style="margin-bottom:10px">
+                        <div class="vzs-order-hdr">
+                          <span style="font-size:10px;color:#7878a0">Состав заказа</span>
+                        </div>
+                        <div class="vzs-order-body">
+                          <div class="vzs-order-items">🍕 Маргарита · 🍔 Бургер Делюкс</div>
+                          <div class="vzs-order-addr">📍 ул. Ленина, 15, кв. 42</div>
+                        </div>
+                      </div>
+
+                      <div style="background:#161619;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:12px;text-align:center">
+                        <div style="font-size:10px;color:#7878a0;margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px">Поиск курьера</div>
+                        <div class="vzs-search-ring">🔍</div>
+                        <div class="vzs-search-label" style="margin-top:8px">Ищем курьера...</div>
+                        <div class="vzs-search-sub">3 курьера онлайн</div>
+                      </div>
+                    </div>
+                    <div style="padding:0 11px 8px;flex-shrink:0">
+                      <div class="vzs-btn-primary">⚡ Поставить на поиск</div>
+                    </div>
+                    <div class="vzs-bnav" style="height:50px">
+                      <div class="vzs-ni on">
+                        <div class="vzs-ni-bar"></div>
+                        <span class="vzs-ni-ico">📦</span>
+                        <span>Заказы</span>
+                      </div>
+                      <div class="vzs-ni">
+                        <span class="vzs-ni-ico">🍽️</span>
+                        <span>Меню</span>
+                      </div>
+                      <div class="vzs-ni">
+                        <span class="vzs-ni-ico">📊</span>
+                        <span>Стат.</span>
+                      </div>
+                      <div class="vzs-ni">
+                        <span class="vzs-ni-ico">⚙️</span>
+                        <span>Настр.</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="dc-home"></div>
+              </div>
+            </div>
+            <div class="dc-info-col">
+              <div class="dc-role-tag admin-tag">👨‍💼 Администратор</div>
+              <div class="dc-step-lbl">Шаг 5 из 7</div>
+              <h3>Ставит на поиск курьера</h3>
+              <p>Принимает заказ и запускает поиск. Все доступные курьеры Vezoo получают уведомление о новом заказе.</p>
+              <div class="dc-highlights">
+                <div class="dc-hl">🔍 Автоматический поиск</div>
+                <div class="dc-hl">👥 Все свободные курьеры видят заказ</div>
+                <div class="dc-hl">⏱️ Курьер принимает за секунды</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ═══ SLIDE 6: Courier — Accept ═══ -->
+          <div class="dc-slide" data-step="5" data-role="courier">
+            <div class="dc-phone-col">
+              <div class="dc-phone">
+                <div class="dc-notch"></div>
+                <div class="dc-screen">
+                  <div class="vzs">
+                    <div class="vzs-hdr">
+                      <span class="vzs-hdr-logo">🚴 Везу Курьер</span>
+                      <span class="vzs-badge vzs-badge-ok" style="font-size:9px;padding:2px 7px">● Онлайн</span>
+                    </div>
+                    <div class="vzs-notif-banner">
+                      🔔 Новый заказ в пуле!
+                    </div>
+                    <div class="vzs-scroll-area" style="padding:6px 11px">
+                      <div class="vzs-pool-item">
+                        <div class="vzs-pool-hdr">
+                          <span class="vzs-pool-venue">🏪 Кафе «Уют»</span>
+                          <span class="vzs-pool-id">#1234</span>
+                        </div>
+                        <div class="vzs-pool-body">
+                          <div class="vzs-pool-addr">📍 ул. Ленина, 15, кв. 42 · ~2 км</div>
+                          <div class="vzs-pool-price">1 240 ₸</div>
+                          <div class="vzs-btn-primary">⚡ Взять заказ</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="vzs-bnav" style="height:50px">
+                      <div class="vzs-ni on">
+                        <div class="vzs-ni-bar"></div>
+                        <span class="vzs-ni-ico">📦</span>
+                        <span>Заказы</span>
+                      </div>
+                      <div class="vzs-ni">
+                        <span class="vzs-ni-ico">✅</span>
+                        <span>История</span>
+                      </div>
+                      <div class="vzs-ni">
+                        <span class="vzs-ni-ico">👤</span>
+                        <span>Профиль</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="dc-home"></div>
+              </div>
+            </div>
+            <div class="dc-info-col">
+              <div class="dc-role-tag courier-tag">🚴 Курьер</div>
+              <div class="dc-step-lbl">Шаг 6 из 7</div>
+              <h3>Принимает заказ из пула</h3>
+              <p>Свободный курьер видит уведомление, проверяет детали — адрес, сумму, ресторан — и принимает заказ.</p>
+              <div class="dc-highlights">
+                <div class="dc-hl">🔔 Push-уведомление курьеру</div>
+                <div class="dc-hl">📍 Адрес и расстояние видны сразу</div>
+                <div class="dc-hl">⚡ Принять одним нажатием</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ═══ SLIDE 7: Delivered ═══ -->
+          <div class="dc-slide" data-step="6" data-role="finish">
+            <div class="dc-phone-col">
+              <div class="dc-phone">
+                <div class="dc-notch"></div>
+                <div class="dc-screen">
+                  <div class="vzs">
+                    <div class="vzs-finish">
+                      <div class="vzs-confetti">
+                        <span class="vzs-fc">🎉</span>
+                        <span class="vzs-fc">✨</span>
+                        <span class="vzs-fc">🍕</span>
+                        <span class="vzs-fc">⭐</span>
+                        <span class="vzs-fc">🎊</span>
+                        <span class="vzs-fc">✨</span>
+                      </div>
+                      <div class="vzs-finish-check">✅</div>
+                      <div class="vzs-finish-title">Заказ доставлен!</div>
+                      <div class="vzs-finish-bon">Приятного<br>аппетита! 🍽️</div>
+                      <div class="vzs-finish-from">Кафе «Уют» · г. Рудный</div>
+                      <div class="vzs-finish-rate-block">
+                        <div class="vzs-finish-rate">Оцените доставку</div>
+                        <div class="vzs-finish-stars">⭐⭐⭐⭐⭐</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="dc-home"></div>
+              </div>
+            </div>
+            <div class="dc-info-col">
+              <div class="dc-role-tag finish-tag">🎉 Доставлено</div>
+              <div class="dc-step-lbl">Шаг 7 из 7</div>
+              <h3>Клиент получает заказ!</h3>
+              <p>После доставки клиент мгновенно получает уведомление «Приятного аппетита!». Весь цикл — под контролем Vezoo.</p>
+              <div class="dc-highlights">
+                <div class="dc-hl">✅ Каждый заказ отслеживается</div>
+                <div class="dc-hl">📊 История в панели администратора</div>
+                <div class="dc-hl">⭐ Клиент оценивает доставку</div>
+              </div>
+              <a href="#tariffs" class="btn-fill" style="margin-top:20px;display:inline-flex">
+                Подключить Vezoo →
+              </a>
+            </div>
+          </div>
+
+        </div><!-- /demo-slides -->
+
+        <!-- Dots -->
+        <div class="demo-dots">
+          <span class="dd active" onclick="demoJump(0)"></span>
+          <span class="dd" onclick="demoJump(1)"></span>
+          <span class="dd" onclick="demoJump(2)"></span>
+          <span class="dd" onclick="demoJump(3)"></span>
+          <span class="dd" onclick="demoJump(4)"></span>
+          <span class="dd" onclick="demoJump(5)"></span>
+          <span class="dd" onclick="demoJump(6)"></span>
+        </div>
+
+      </div><!-- /demo-cw -->
+    </div>
+  </section>
+
+  <!-- TARIFFS -->
+  <section class="tariffs" id="tariffs">
+    <div class="cnt">
+      <div class="sec-head" data-anim>
+        <span class="sec-tag">Тарифы</span>
+        <h2>Выберите подходящий план</h2>
+        <p>Прозрачное ценообразование без скрытых комиссий</p>
+      </div>
+      <div class="tar-grid">
+        <div class="tcard" data-anim>
+          <div class="tcard-top">
+            <div class="tcard-icon">🚀</div>
+            <div class="tcard-name">Старт</div>
+            <div class="tcard-sub">Для заведений без онлайн-меню</div>
+          </div>
+          <div class="tcard-pricing">
+            <div class="tp-row">
+              <span class="tp-lbl">Первые 50 доставок</span>
+              <span class="tp-val">250 ₸ / доставка</span>
+            </div>
+            <div class="tp-row">
+              <span class="tp-lbl">С 51-й доставки</span>
+              <span class="tp-val">200 ₸ / доставка</span>
+            </div>
+          </div>
+          <div class="tcard-sep"></div>
+          <div class="tcard-feats">
+            <div class="tf">✓ Создание заказов</div>
+            <div class="tf">✓ Передача курьерам</div>
+            <div class="tf">✓ Учёт доставок</div>
+          </div>
+          <div class="tcard-note">
+            Подходит, если нужен только сервис передачи заказов курьерам
+          </div>
+          <a href="#contacts" class="tcard-btn tcard-btn-outline">Выбрать тариф</a>
+        </div>
+
+        <div class="tcard tcard-featured" data-anim>
+          <div class="tcard-popular">Популярный</div>
+          <div class="tcard-top">
+            <div class="tcard-icon">⭐</div>
+            <div class="tcard-name">Стандарт</div>
+            <div class="tcard-sub">Для заведений с онлайн-меню и заказами</div>
+          </div>
+          <div class="tier-chooser">
+            <div class="tier-lbl">Объём доставок в месяц:</div>
+            <div class="tier-btns">
+              <button class="tier-btn active" data-p="50 000" data-d="до 150">до 150</button>
+              <button class="tier-btn" data-p="100 000" data-d="151–400">151–400</button>
+              <button class="tier-btn" data-p="150 000" data-d="401–700">401–700</button>
+              <button class="tier-btn" data-p="200 000" data-d="701–1000">701–1000</button>
+            </div>
+            <div class="tier-price-wrap">
+              <span class="tier-price" id="tierPrice">50 000 ₸</span>
+              <span class="tier-mo">/ месяц</span>
+            </div>
+            <div class="tier-range-lbl" id="tierRange">до 150 доставок включено</div>
+          </div>
+          <div class="tcard-sep"></div>
+          <div class="tcard-feats">
+            <div class="tf">✓ Размещение меню</div>
+            <div class="tf">✓ Онлайн-заказы</div>
+            <div class="tf">✓ Панель управления</div>
+            <div class="tf">✓ Техническая поддержка</div>
+            <div class="tf">✓ Доставка и самовывоз</div>
+            <div class="tf tf-muted">+ Самовывоз: 10 ₸ / заказ</div>
+          </div>
+          <a href="#contacts" class="tcard-btn tcard-btn-fill">Выбрать тариф</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="why" id="why">
+    <div class="cnt">
+      <div class="sec-head" data-anim>
+        <span class="sec-tag">Преимущества</span>
+        <h2>Почему Vezoo?</h2>
+        <p>Всё готово к запуску — никаких лишних сложностей</p>
+      </div>
+      <div class="why-grid">
+        <div class="wcard" data-anim>
+          <div class="wcard-ico">💡</div>
+          <h4>Не нужно своё приложение</h4>
+          <p>Готовый Telegram MiniApp. Экономите сотни тысяч на разработке.</p>
+        </div>
+        <div class="wcard" data-anim>
+          <div class="wcard-ico">🚴</div>
+          <h4>Не нужно нанимать курьеров</h4>
+          <p>Используйте пул курьеров Vezoo или подключите собственных.</p>
+        </div>
+        <div class="wcard" data-anim>
+          <div class="wcard-ico">⚡</div>
+          <h4>Быстрое подключение</h4>
+          <p>Запустите доставку буквально за один день.</p>
+        </div>
+        <div class="wcard" data-anim>
+          <div class="wcard-ico">🏪</div>
+          <h4>Для любого формата</h4>
+          <p>Подходит для кафе, ресторанов, доставки еды и сетевых заведений.</p>
+        </div>
+        <div class="wcard" data-anim>
+          <div class="wcard-ico">💎</div>
+          <h4>Прозрачные расчёты</h4>
+          <p>Чёткие тарифы без скрытых комиссий. Платите только за доставки.</p>
+        </div>
+        <div class="wcard" data-anim>
+          <div class="wcard-ico">🛟</div>
+          <h4>Техническая поддержка</h4>
+          <p>Команда Vezoo поможет с подключением и ответит на вопросы.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEPS -->
+  <section class="steps" id="steps">
+    <div class="cnt">
+      <div class="sec-head" data-anim>
+        <span class="sec-tag">Как начать</span>
+        <h2>Запустите доставку за 4 шага</h2>
+        <p>Простой процесс подключения — без лишних сложностей</p>
+      </div>
+      <div class="steps-wrap">
+        <div class="step" data-anim>
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h4>Выбираете тариф</h4>
+            <p>«Старт» — только курьеры. «Стандарт» — полный сервис.</p>
+          </div>
+        </div>
+        <div class="step-line"></div>
+        <div class="step" data-anim>
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h4>Подключаете заведение</h4>
+            <p>Регистрируем ваше заведение в системе Vezoo. Один день.</p>
+          </div>
+        </div>
+        <div class="step-line"></div>
+        <div class="step" data-anim>
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h4>Загружаете меню</h4>
+            <p>Для тарифа «Стандарт» — добавляете блюда с ценами.</p>
+          </div>
+        </div>
+        <div class="step-line"></div>
+        <div class="step" data-anim>
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <h4>Принимаете первый заказ</h4>
+            <p>Всё готово. Клиенты заказывают, курьеры доставляют.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTS -->
+  <section class="contacts" id="contacts">
+    <div class="cnt">
+      <div class="contacts-card" data-anim>
+        <div class="cc-orb cc-orb1"></div>
+        <div class="cc-orb cc-orb2"></div>
+        <div class="cc-inner">
+          <span class="sec-tag">Контакты</span>
+          <h2 style="margin:16px 0 12px">Готовы начать?</h2>
+          <p class="cc-sub">Позвоните нам — ответим на вопросы и поможем с подключением</p>
+          <div class="cc-phone-block">
+            <div class="cc-phone-ico">📞</div>
+            <div class="cc-phone-text">
+              <div class="cc-phone-lbl">Телефон / WhatsApp</div>
+              <div class="cc-phone-num">Номер телефона</div>
+            </div>
+          </div>
+          <div class="cc-loc">📍 г. Рудный, Казахстан</div>
+          <a href="tel:+" class="btn-fill cc-cta">Позвонить</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="cnt">
+      <div class="foot-wrap">
+        <div class="foot-brand">
+          <span class="logo-v">V</span><span class="logo-rest">ezoo</span>
+        </div>
+        <div class="foot-meta">Сервис доставки · г. Рудный, Казахстан</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
