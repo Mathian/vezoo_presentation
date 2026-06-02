@@ -156,7 +156,11 @@ tierBtns.forEach(btn => {
       }, 180);
     }
     if (tierRangeEl) {
-      tierRangeEl.textContent = btn.dataset.d + ' доставок включено';
+      if (btn.dataset.d === '1001+') {
+  tierRangeEl.textContent = '1001+ доставок';
+} else {
+  tierRangeEl.textContent = btn.dataset.d + ' доставок включительно';
+}
     }
   });
 });
